@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Shri Digital Consultancy Digital Consultancy</title>
+<meta name="description" content="Browse Shri Digital Consultancy's portfolio of websites, e-commerce stores, UI/UX design and technology platforms delivered for growing businesses.">
+<meta property="og:title" content="Portfolio — Shri Digital Consultancy Digital Consultancy">
+<meta property="og:description" content="Digital experiences built to make an impact.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Shri Digital Consultancy</a>
+    <nav class="nav-desktop" aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a><div class="services-menu"><a href="services.html#digital-strategy">Digital Strategy</a><a href="services.html#web-development">Web Development</a><a href="services.html#ecommerce-development">E-commerce Development</a><a href="services.html#ui-ux-design">UI/UX Design</a><a href="services.html#digital-marketing">Digital Marketing</a><a href="services.html#technology-consulting">Technology Consulting</a></div></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-primary">Let's Talk
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </a>
+      </div>
+    </nav>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<nav class="mobile-nav" aria-label="Mobile">
+  <a href="index.html"><span>01</span>Home</a>
+  <a href="services.html"><span>02</span>Services</a>
+  <a class="mobile-service-link" href="services.html#digital-strategy">Digital Strategy</a><a class="mobile-service-link" href="services.html#web-development">Web Development</a><a class="mobile-service-link" href="services.html#ecommerce-development">E-commerce Development</a><a class="mobile-service-link" href="services.html#ui-ux-design">UI/UX Design</a><a class="mobile-service-link" href="services.html#digital-marketing">Digital Marketing</a><a class="mobile-service-link" href="services.html#technology-consulting">Technology Consulting</a>
+  <a href="about.html"><span>03</span>About</a>
+  <a href="portfolio.html"><span>04</span>Portfolio</a>
+  <a href="blog.html"><span>05</span>Blog</a>
+  <a href="contact.html"><span>06</span>Contact</a>
+  <a href="contact.html" class="btn btn-accent">Let's Talk</a>
+</nav>
+
+<main id="main">
+
+  <section class="hero hero-simple">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="eyebrow">Our Work</div>
+      <h1>Digital Experiences Built<br>to Make an Impact.</h1>
+      <p class="lede">A selection of projects across websites, e-commerce, design and technology platforms — each one built around a specific business outcome.</p>
+    </div>
+  </section>
+
+  <!-- ============ PORTFOLIO GRID ============ -->
+  <section class="section">
+    <div class="container">
+
+      <div class="filter-row reveal">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="websites">Websites</button>
+        <button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+        <button class="filter-btn" data-filter="uiux">UI/UX</button>
+        <button class="filter-btn" data-filter="branding">Branding</button>
+        <button class="filter-btn" data-filter="technology">Technology</button>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <article class="portfolio-card" data-category="websites">
+          <div class="portfolio-media">
+            <span class="portfolio-num">01</span>
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=700&q=80" alt="Mane Financial corporate website homepage" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <span class="portfolio-cat">Corporate Website</span>
+              <h3>Mane Financial</h3>
+              <p>A trust-driven digital presence for a financial advisory firm.</p>
+            </div>
+            <a href="#" class="portfolio-arrow" aria-label="View Mane Financial project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="ecommerce">
+          <div class="portfolio-media">
+            <span class="portfolio-num">02</span>
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=700&q=80" alt="Fashion e-commerce experience product listing page" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <span class="portfolio-cat">E-commerce Experience</span>
+              <h3>Fashion</h3>
+              <p>Digital transformation for a modern fashion brand.</p>
+            </div>
+            <a href="#" class="portfolio-arrow" aria-label="View Fashion project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="ecommerce">
+          <div class="portfolio-media">
+            <span class="portfolio-num">03</span>
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=700&q=80" alt="Jewellery Miracle e-commerce website product page" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <span class="portfolio-cat">E-commerce Website</span>
+              <h3>Jewellery Miracle</h3>
+              <p>A wellness brand's online store, built for education and trust.</p>
+            </div>
+            <a href="#" class="portfolio-arrow" aria-label="View Jewellery Miracle project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="technology">
+          <div class="portfolio-media">
+            <span class="portfolio-num">04</span>
+            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=700&q=80" alt="Finapinc financial platform interface" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <span class="portfolio-cat">Financial Platform</span>
+              <h3>Finapinc</h3>
+              <p>A custom platform built to streamline client onboarding.</p>
+            </div>
+            <a href="#" class="portfolio-arrow" aria-label="View Finapinc project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="ecommerce">
+          <div class="portfolio-media">
+            <span class="portfolio-num">05</span>
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=700&q=80" alt="Digital Retail e-commerce transformation storefront" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <span class="portfolio-cat">E-commerce Transformation</span>
+              <h3>Digital Retail</h3>
+              <p>A legacy retailer's move from in-store only to omnichannel.</p>
+            </div>
+            <a href="#" class="portfolio-arrow" aria-label="View Digital Retail project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="technology">
+          <div class="portfolio-media">
+            <span class="portfolio-num">06</span>
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=700&q=80" alt="Business Connect technology platform dashboard" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <span class="portfolio-cat">Technology Platform</span>
+              <h3>Business Connect</h3>
+              <p>A B2B matchmaking platform connecting vendors and buyers.</p>
+            </div>
+            <a href="#" class="portfolio-arrow" aria-label="View Business Connect project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="uiux">
+          <div class="portfolio-media">
+            <span class="portfolio-num">07</span>
+            <img src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=700&q=80" alt="UX wireframes and design system for a mobile app" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <span class="portfolio-cat">UI/UX Design</span>
+              <h3>Larkspur App</h3>
+              <p>A design system and mobile UX overhaul for a booking app.</p>
+            </div>
+            <a href="#" class="portfolio-arrow" aria-label="View Larkspur App project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="branding">
+          <div class="portfolio-media">
+            <span class="portfolio-num">08</span>
+            <img src="https://images.unsplash.com/photo-1487014679447-9f8336841d58?auto=format&fit=crop&w=700&q=80" alt="Brand identity moodboard and visual system" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <span class="portfolio-cat">Brand Identity</span>
+              <h3>Union Systems</h3>
+              <p>A full rebrand for a growing industrial software company.</p>
+            </div>
+            <a href="#" class="portfolio-arrow" aria-label="View Union Systems project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+        </article>
+
+        <article class="portfolio-card" data-category="websites">
+          <div class="portfolio-media">
+            <span class="portfolio-num">09</span>
+            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=700&q=80" alt="Kestrel Retail corporate website on desktop screen" loading="lazy">
+          </div>
+          <div class="portfolio-info">
+            <div>
+              <span class="portfolio-cat">Corporate Website</span>
+              <h3>Kestrel Retail</h3>
+              <p>A high-conversion corporate site for a national retail chain.</p>
+            </div>
+            <a href="#" class="portfolio-arrow" aria-label="View Kestrel Retail project"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURED CASE STUDY ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="case-study reveal">
+        <div class="case-media">
+          <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=1000&q=80" alt="Fashion fashion e-commerce case study hero image" loading="lazy">
+        </div>
+        <div class="case-content">
+          <div class="eyebrow">Featured Case Study</div>
+          <h3>Fashion</h3>
+          <div class="case-meta">
+            <div>
+              <div class="label">Industry</div>
+              <div class="value">Fashion / E-commerce</div>
+            </div>
+            <div>
+              <div class="label">Services</div>
+              <div class="value">UI/UX · Development · Conversion</div>
+            </div>
+          </div>
+          <div class="case-results">
+            <div>
+              <div class="res-num">+45%</div>
+              <div class="res-label">Engagement</div>
+            </div>
+            <div>
+              <div class="res-num">+32%</div>
+              <div class="res-label">Conversion</div>
+            </div>
+          </div>
+          <a href="contact.html" class="btn btn-outline on-dark">View Case Study
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="cta-banner reveal">
+      <div class="container">
+        <h2>Like what you see?<br>Let's build your next project.</h2>
+        <p>Tell us about your business and we'll show you how we'd approach it.</p>
+        <a href="contact.html" class="btn btn-accent">Start a Conversation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">Shri Digital Consultancy</a>
+        <p>A digital consultancy helping ambitious businesses turn ideas into scalable technology and measurable growth.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 13v4"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 9h3V6h-3a3 3 0 00-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9a1 1 0 011-1z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services.html">Web Development</a></li>
+          <li><a href="services.html">Digital Strategy</a></li>
+          <li><a href="services.html">E-commerce</a></li>
+          <li><a href="services.html">UI/UX Design</a></li>
+          <li><a href="services.html">Digital Marketing</a></li>
+          <li><a href="services.html">Technology Consulting</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p class="muted-line">Email</p>
+        <ul><li><a href="mailto:digitalconsulting1390@gmail.com">digitalconsulting1390@gmail.com</a></li></ul>
+        <p class="muted-line">Phone</p>
+        <ul><li><a href="tel:+91XXXXXXXXXX">+91 9967943460</a></li></ul>
+        <p class="muted-line">Location</p>
+        <ul><li>Mumbai, India</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Digital Consultancy. All Rights Reserved.</p>
+      <p><a href="contact.html">Privacy Policy</a> · <a href="contact.html">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+</body>
+</html>

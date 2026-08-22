@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Manager | Shri Digital Consultancy</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="style.css"><script src="blog-posts.js" defer></script><script src="script.js" defer></script>
+</head>
+<body>
+<header class="site-header"><div class="container header-inner"><a href="index.html" class="logo">Shri Digital Consultancy</a><a href="blog.html" class="btn btn-outline">View blog</a></div></header>
+<main id="main"><section class="hero hero-simple"><div class="container"><div class="eyebrow">Local content manager</div><h1>Manage blog<br>content.</h1><p class="lede">Edit posts in this browser, then save them for the public blog on this device.</p></div></section>
+<section class="section-tight"><div class="container"><div class="blog-admin-toolbar"><button id="new-post" class="btn btn-accent">New post</button><button id="export-posts" class="btn btn-outline">Export JSON</button><button id="reset-posts" class="btn btn-outline">Reset defaults</button><span id="admin-status" role="status"></span></div><form id="blog-editor" class="blog-editor"><input type="hidden" id="post-index"><div class="form-grid"><div class="form-group"><label for="post-title">Title</label><input id="post-title" required></div><div class="form-group"><label for="post-category">Category</label><input id="post-category" required></div><div class="form-group"><label for="post-date">Date</label><input id="post-date" type="date" required></div><div class="form-group"><label for="post-slug">Slug</label><input id="post-slug" required></div><div class="form-group full"><label for="post-excerpt">Excerpt</label><textarea id="post-excerpt" required></textarea></div><div class="form-group full"><label for="post-body">Article body</label><textarea id="post-body" class="blog-body-input" required></textarea></div><div class="form-group full"><button class="btn btn-primary" type="submit">Save post</button></div></div></form><div id="admin-posts" class="admin-post-list"></div></div></section></main>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const editor = document.getElementById('blog-editor'), status = document.getElementById('admin-status'), list = document.getElementById('admin-posts');
+  let posts = getBlogPosts();
+  const fields = ['title','category','date','slug','excerpt','body'];
+  const setStatus = text => { status.textContent = text; window.setTimeout(() => status.textContent = '', 2200); };
+  const render = () => { list.innerHTML = ''; posts.forEach((post, index) => { const item = document.createElement('div'); item.className = 'admin-post-item'; item.innerHTML = `<div><strong>${post.title}</strong><span>${post.category} · ${post.date}</span></div><button class="btn btn-outline" data-edit="${index}">Edit</button><button class="btn btn-outline" data-delete="${index}">Delete</button>`; list.appendChild(item); }); };
+  const fill = (post, index) => { document.getElementById('post-index').value = index; fields.forEach(field => document.getElementById('post-' + field).value = post[field] || ''); window.scrollTo({ top: editor.offsetTop - 100, behavior:'smooth' }); };
+  document.getElementById('new-post').onclick = () => fill({ title:'', category:'Strategy', date:new Date().toISOString().slice(0,10), slug:'new-post', excerpt:'', body:'' }, '');
+  document.getElementById('reset-posts').onclick = () => { posts = defaultBlogPosts.slice(); saveBlogPosts(posts); render(); setStatus('Defaults restored'); };
+  document.getElementById('export-posts').onclick = () => { const blob = new Blob([JSON.stringify(posts, null, 2)], { type:'application/json' }); const link = document.createElement('a'); link.href = URL.createObjectURL(blob); link.download = 'blog-posts.json'; link.click(); URL.revokeObjectURL(link.href); };
+  editor.onsubmit = event => { event.preventDefault(); const post = {}; fields.forEach(field => post[field] = document.getElementById('post-' + field).value.trim()); const index = document.getElementById('post-index').value; if(index === '') posts.unshift(post); else posts[Number(index)] = post; saveBlogPosts(posts); render(); editor.reset(); setStatus('Post saved on this device'); };
+  list.onclick = event => { const edit = event.target.dataset.edit, remove = event.target.dataset.delete; if(edit !== undefined) fill(posts[Number(edit)], edit); if(remove !== undefined) { posts.splice(Number(remove), 1); saveBlogPosts(posts); render(); setStatus('Post deleted'); } };
+  render();
+});
+</script>
+</body>
+</html>

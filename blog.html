@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Marketing Insights | Shri Digital Consultancy</title>
+<meta name="description" content="Practical insights on digital strategy, SEO, websites and growth from Shri Digital Consultancy.">
+<meta name="keywords" content="digital marketing blog, SEO strategy, web development, digital consultancy Mumbai">
+<link rel="canonical" href="blog.html">
+<meta property="og:title" content="Digital Marketing Insights | Shri Digital Consultancy">
+<meta property="og:description" content="Practical insights on digital strategy, SEO, websites and growth.">
+<link rel="stylesheet" href="style.css">
+<script src="blog-posts.js" defer></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">Shri Digital Consultancy</a>
+    <nav class="nav-desktop" aria-label="Primary"><ul class="nav-links">
+      <li><a href="index.html">Home</a></li><li><a href="services.html">Services</a><div class="services-menu"><a href="services.html#digital-strategy">Digital Strategy</a><a href="services.html#web-development">Web Development</a><a href="services.html#ecommerce-development">E-commerce Development</a><a href="services.html#ui-ux-design">UI/UX Design</a><a href="services.html#digital-marketing">Digital Marketing</a><a href="services.html#technology-consulting">Technology Consulting</a></div></li><li><a href="about.html">About</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a class="active" href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+    </ul><div class="nav-cta"><a href="contact.html" class="btn btn-primary">Let's Talk</a></div></nav>
+    <button class="hamburger" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-nav" aria-label="Mobile"><a href="index.html"><span>01</span>Home</a><a href="services.html"><span>02</span>Services</a><a class="mobile-service-link" href="services.html#digital-strategy">Digital Strategy</a><a class="mobile-service-link" href="services.html#web-development">Web Development</a><a class="mobile-service-link" href="services.html#ecommerce-development">E-commerce Development</a><a class="mobile-service-link" href="services.html#ui-ux-design">UI/UX Design</a><a class="mobile-service-link" href="services.html#digital-marketing">Digital Marketing</a><a class="mobile-service-link" href="services.html#technology-consulting">Technology Consulting</a><a href="about.html"><span>03</span>About</a><a href="portfolio.html"><span>04</span>Portfolio</a><a href="blog.html"><span>05</span>Blog</a><a href="contact.html"><span>06</span>Contact</a></nav>
+<main id="main">
+  <section class="hero hero-simple blog-hero"><div class="hero-grid-bg" aria-hidden="true"></div><div class="container"><div class="eyebrow">Insights &amp; Ideas</div><h1>Clarity for the<br><em>digital</em> road ahead.</h1><p class="lede">Practical thinking on strategy, search, technology and the work that turns attention into growth.</p></div></section>
+  <section class="section"><div class="container"><div id="blog-list" class="blog-grid" aria-live="polite"></div></div></section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-top"><div class="footer-brand"><a href="index.html" class="logo">Shri Digital Consultancy</a><p>Digital strategy, design, technology and growth for ambitious businesses.</p></div><div class="footer-col"><h4>Explore</h4><ul><li><a href="services.html">Services</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul></div><div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:digitalconsulting1390@gmail.com">digitalconsulting1390@gmail.com</a></li><li>Mumbai, India</li></ul></div></div><div class="footer-bottom"><p>© 2026 Shri Digital Consultancy.</p><p><a href="blog-admin.html">Manage blog</a></p></div></div></footer>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const list = document.getElementById('blog-list');
+  getBlogPosts().forEach(post => {
+    const article = document.createElement('article');
+    article.className = 'blog-card reveal';
+    const body = post.body.split('\n\n').map(paragraph => `<p>${paragraph}</p>`).join('');
+    article.innerHTML = `<div class="blog-card-top"><span>${post.category}</span><time datetime="${post.date}">${new Date(post.date + 'T00:00:00').toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' })}</time></div><h2>${post.title}</h2><p class="blog-excerpt">${post.excerpt}</p><div class="blog-article-body">${body}</div>`;
+    article.id = post.slug;
+    list.appendChild(article);
+  });
+  initScrollReveal();
+});
+</script>
+</body>
+</html>
