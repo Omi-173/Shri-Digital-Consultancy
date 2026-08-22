@@ -1223,3 +1223,313 @@ p{color:var(--muted);}
   .section-head{margin-bottom:40px;}
   .map-block{min-height:220px;}
 }
+
+/* =========================================================
+   FINAL MOBILE HORIZONTAL SCROLL / OVERFLOW FIX
+   ========================================================= */
+
+html {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent media from creating overflow */
+img,
+video,
+iframe,
+svg,
+canvas {
+  max-width: 100%;
+}
+
+/* Keep all major page areas inside viewport */
+header,
+main,
+section,
+footer,
+.site-header,
+.site-footer,
+.home-video-hero,
+.hero,
+.marquee-wrap,
+.section,
+.section-tight,
+.cta-banner {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Containers */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Canvas animations */
+#marketing-canvas,
+#signal-canvas,
+.marketing-canvas {
+  display: block;
+  max-width: 100%;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden !important;
+    overflow-x: clip !important;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* Header */
+  .site-header {
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .header-inner {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .logo {
+    max-width: calc(100% - 60px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Mobile menu */
+  .mobile-nav {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden !important;
+  }
+
+  /* Hero */
+  .home-video-hero,
+  .home-secondary-hero,
+  .hero,
+  .hero-home {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+  }
+
+  .hero-home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-copy,
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hero-copy h1,
+  .hero-copy p,
+  .lede {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* Canvas */
+  #marketing-canvas,
+  #signal-canvas,
+  .marketing-canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+  }
+
+  /* Buttons */
+  .btn-row {
+    width: 100%;
+    max-width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    max-width: 100%;
+  }
+
+  /* About */
+  .intro-split {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .intro-media,
+  .intro-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .intro-media img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Services */
+  .bento {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .service-card {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .service-card p,
+  .service-title {
+    overflow-wrap: break-word;
+  }
+
+  /* Stats */
+  .stats-section,
+  .stats-grid,
+  .stat-item {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Marquee */
+  .marquee-wrap {
+    width: 100%;
+    max-width: 100vw;
+    overflow: hidden !important;
+  }
+
+  .marquee-track {
+    width: max-content;
+    max-width: none;
+  }
+
+  /* Feature rows */
+  .feature-list,
+  .feature-row {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .feature-row {
+    overflow: hidden;
+  }
+
+  .feature-row h3,
+  .feature-row p {
+    min-width: 0;
+    overflow-wrap: break-word;
+  }
+
+  /* CTA */
+  .cta-banner {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .cta-banner h2,
+  .cta-banner p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  /* Footer */
+  .site-footer {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .footer-top {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .footer-brand,
+  .footer-col {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .footer-col a,
+  .footer-brand p {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  /* Prevent absolutely positioned decorative elements
+     from creating horizontal page movement */
+  .hero-grid-bg,
+  .video-tint,
+  .video-scroll-mark,
+  .float-card {
+    max-width: 100vw;
+  }
+}
+
+/* Smaller phones */
+@media (max-width: 480px) {
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .btn-row {
+    width: 100%;
+  }
+
+  .btn-row .btn {
+    width: 100%;
+  }
+
+  .float-card {
+    max-width: 140px;
+  }
+}
