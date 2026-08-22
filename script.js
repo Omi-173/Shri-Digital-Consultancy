@@ -132,11 +132,15 @@ function initMarketingWordCloud(){
       const y = baseY + vector[1] * height * 0.35 * spread + drift + pointerY * (14 + entry.depth * 28);
       const fontSize = Math.max(10, Math.min(width * 0.017, 20)) * entry.scale;
       ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(entry.angle * (0.25 + settled * 0.75));
-      ctx.globalAlpha = Math.min(1, progress * 1.8) * (0.38 + entry.depth * 0.18);
       ctx.font = `600 ${fontSize}px Montserrat, sans-serif`;
       ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+      const textWidth = ctx.measureText(entry.word).width;
+      const edgePadding = Math.min(18, width * 0.04);
+      const visibleX = Math.max(textWidth / 2 + edgePadding, Math.min(width - textWidth / 2 - edgePadding, x));
+      const visibleY = Math.max(fontSize / 2 + edgePadding, Math.min(height - fontSize / 2 - edgePadding, y));
+      ctx.translate(visibleX, visibleY);
+      ctx.rotate(entry.angle * (0.25 + settled * 0.75));
+      ctx.globalAlpha = Math.min(1, progress * 1.8) * (0.38 + entry.depth * 0.18);
       ctx.fillStyle = entry.depth > .78 ? '#75baff' : '#d9ecff';
       ctx.shadowColor = 'rgba(55,140,255,.32)';
       ctx.shadowBlur = 8;
@@ -179,6 +183,7 @@ function initHeader(){
 function initMobileNav(){
   const btn = document.querySelector('.hamburger');
   const menu = document.querySelector('.mobile-nav');
+  const closeButton = document.querySelector('.mobile-nav-close');
   if(!btn || !menu) return;
 
   const closeMenu = () => {
@@ -198,6 +203,7 @@ function initMobileNav(){
     const isOpen = menu.classList.contains('is-open');
     isOpen ? closeMenu() : openMenu();
   });
+  closeButton?.addEventListener('click', closeMenu);
 
   menu.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', closeMenu);
@@ -381,35 +387,10 @@ function initContactForm(){
       return;
     }
 
-    const formData = new FormData(form);
-    const isLocalPreview = window.location.protocol === 'file:' || ['localhost', '127.0.0.1'].includes(window.location.hostname);
-    if(isLocalPreview){
-      const fields = Object.fromEntries(formData.entries());
-      const subject = encodeURIComponent('New Shri Digital Consultancy enquiry');
-      const body = encodeURIComponent(`Name: ${fields.name}\nEmail: ${fields.email}\nPhone: ${fields.phone}\nCompany: ${fields.company || ''}\nService: ${fields.service}\nBudget: ${fields.budget || ''}\n\nMessage:\n${fields.message}`);
-      const mailto = `mailto:digitalconsulting1390@gmail.com?subject=${subject}&body=${body}`;
-      const mailWindow = window.open(mailto, '_blank');
-      form.reset();
-      form.hidden = true;
-      if(successBox) successBox.classList.add('is-visible');
-      if(successBox){
-        const message = successBox.querySelector('.form-success-message');
-        if(message) message.textContent = 'Thanks — we\'ll be in touch within one business day.';
-      }
-      if(statusBox) statusBox.textContent = '';
-      return;
-    }
-
-    submitEnquiry(formData)
-      .then(() => {
-        form.reset();
-        form.hidden = true;
-        if(successBox) successBox.classList.add('is-visible');
-        if(statusBox) statusBox.textContent = '';
-      })
-      .catch((error) => {
-        if(statusBox) statusBox.textContent = error.message || 'Unable to send. Please email digitalconsulting1390@gmail.com directly.';
-      });
+    const fields = Object.fromEntries(new FormData(form).entries());
+    const whatsappMessage = `New Shri Digital Consultancy enquiry\n\nName: ${fields.name}\nEmail: ${fields.email}\nPhone: ${fields.phone}\nCompany: ${fields.company || 'Not provided'}\nService: ${fields.service}\nBudget: ${fields.budget || 'Not provided'}\n\nMessage:\n${fields.message}`;
+    const whatsappUrl = `https://wa.me/919967943460?text=${encodeURIComponent(whatsappMessage)}`;
+    window.location.assign(whatsappUrl);
   });
 }
 
