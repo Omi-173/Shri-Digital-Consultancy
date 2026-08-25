@@ -1,5 +1,5 @@
 /* =========================================================
-   Shri Digital Consultancy — Digital Consultancy
+   Shri Digital Consultancy  Digital Consultancy
    Design tokens
 ========================================================= */
 :root{
@@ -654,7 +654,7 @@ p{color:var(--muted);}
 }
 
 /* =========================================================
-   Services — bento grid (home preview + services page)
+   Services  bento grid (home preview + services page)
 ========================================================= */
 .bento{
   display:grid;
@@ -662,6 +662,9 @@ p{color:var(--muted);}
   gap:20px;
 }
 .service-card{
+  display:block;
+  color:inherit;
+  text-decoration:none;
   grid-column:span 1;
   background:var(--bg-soft);
   border:1px solid var(--border);
