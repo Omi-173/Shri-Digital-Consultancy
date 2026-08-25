@@ -1,5 +1,5 @@
 /* =========================================================
-  Shri Digital Consultancy — Digital Consultancy
+  Shri Digital Consultancy  Digital Consultancy
   script.js
 ========================================================= */
 if(document.body) document.body.classList.add('page-loading');
@@ -77,7 +77,7 @@ function initPageExperience(){
   });
 }
 
-/* ---------- Marketing word cloud — cinematic hero loop ---------- */
+/* ---------- Marketing word cloud  cinematic hero loop ---------- */
 function initMarketingWordCloud(){
   const canvas = document.getElementById('marketing-canvas');
   if(!canvas) return;
@@ -421,7 +421,7 @@ function initBackToTop(){
   });
 }
 
-/* ---------- Signal canvas — signature hero animation ---------- */
+/* ---------- Signal canvas  signature hero animation ---------- */
 function initSignalCanvas(){
   const canvas = document.getElementById('signal-canvas');
   if(!canvas) return;
