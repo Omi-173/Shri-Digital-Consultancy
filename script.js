@@ -388,7 +388,7 @@ function initContactForm(){
     }
 
     const fields = Object.fromEntries(new FormData(form).entries());
-    const whatsappMessage = `New Shri Digital Consultancy enquiry\n\nName: ${fields.name}\nEmail: ${fields.email}\nPhone: ${fields.phone}\nCompany: ${fields.company || 'Not provided'}\nService: ${fields.service}\nBudget: ${fields.budget || 'Not provided'}\n\nMessage:\n${fields.message}`;
+    const whatsappMessage = `New Shri Digital Consultancy enquiry:\n\nName: ${fields.name}\nEmail: ${fields.email}\nPhone: ${fields.phone}\nCompany: ${fields.company || 'Not provided'}\nService: ${fields.service}\nBudget: ${fields.budget || 'Not provided'}\n\nMessage:\n${fields.message}`;
     const whatsappUrl = `https://wa.me/919967943460?text=${encodeURIComponent(whatsappMessage)}`;
     window.location.assign(whatsappUrl);
   });
