@@ -17,8 +17,86 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeroWordAssembly();
   initMarketingWordCloud();
   initSignalCanvas();
+  initHero3D();
   initActiveNav();
 });
+
+function initHero3D(){
+  const canvas = document.getElementById('hero3d-canvas');
+  if(!canvas || !window.THREE) return;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(32, 1, .1, 100);
+  camera.position.set(0, .15, 7.6);
+  const renderer = new THREE.WebGLRenderer({ canvas, alpha:true, antialias:true, powerPreference:'high-performance' });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.setClearColor(0x10284f, 0);
+
+  const object = new THREE.Group();
+  object.position.set(1.35, .05, 0);
+  scene.add(object);
+  const outer = new THREE.Mesh(new THREE.IcosahedronGeometry(1.5, 2), new THREE.MeshBasicMaterial({ color:0xfff8ed, wireframe:true, transparent:true, opacity:.6 }));
+  const core = new THREE.Mesh(new THREE.IcosahedronGeometry(1.08, 1), new THREE.MeshBasicMaterial({ color:0xff4d2e, wireframe:true, transparent:true, opacity:.9 }));
+  core.rotation.set(.25, .4, .1);
+  object.add(outer, core);
+
+  const orbit = new THREE.Group();
+  [1.9,2.3,2.7].forEach((radius, index) => {
+    const ring = new THREE.Mesh(new THREE.TorusGeometry(radius, .009 + index * .003, 8, 150), new THREE.MeshBasicMaterial({ color:index === 1 ? 0x74d9cf : 0xfff8ed, transparent:true, opacity:index === 1 ? .7 : .35 }));
+    ring.rotation.set(index * .65, index * .4, index * .25);
+    orbit.add(ring);
+  });
+  object.add(orbit);
+
+  const particleCount = window.innerWidth < 600 ? 260 : 520;
+  const positions = new Float32Array(particleCount * 3);
+  for(let index = 0; index < particleCount; index++){
+    const radius = 2.6 + Math.random() * 4.2;
+    const angle = Math.random() * Math.PI * 2;
+    positions[index * 3] = Math.cos(angle) * radius;
+    positions[index * 3 + 1] = (Math.random() - .5) * 4.6;
+    positions[index * 3 + 2] = Math.sin(angle) * radius - 1;
+  }
+  const particleGeometry = new THREE.BufferGeometry();
+  particleGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const particles = new THREE.Points(particleGeometry, new THREE.PointsMaterial({ color:0x9ccbc9, size:.018, transparent:true, opacity:.75 }));
+  scene.add(particles);
+
+  const pointer = { x:0, y:0, targetX:0, targetY:0 };
+  const hero = canvas.closest('.hero3d');
+  hero?.addEventListener('pointermove', (event) => {
+    const rect = hero.getBoundingClientRect();
+    pointer.targetX = ((event.clientX - rect.left) / rect.width - .5) * 2;
+    pointer.targetY = ((event.clientY - rect.top) / rect.height - .5) * 2;
+  }, { passive:true });
+  hero?.addEventListener('pointerleave', () => { pointer.targetX = 0; pointer.targetY = 0; });
+  function resize(){
+    const rect = canvas.getBoundingClientRect();
+    renderer.setSize(rect.width, rect.height, false);
+    camera.aspect = rect.width / rect.height;
+    camera.updateProjectionMatrix();
+  }
+  function render(time){
+    const seconds = time * .001;
+    pointer.x += (pointer.targetX - pointer.x) * .04;
+    pointer.y += (pointer.targetY - pointer.y) * .04;
+    object.rotation.y = (reduceMotion ? .15 : seconds * .13) + pointer.x * .12;
+    object.rotation.x = pointer.y * .08;
+    outer.rotation.z = reduceMotion ? .15 : seconds * .08;
+    core.rotation.y = reduceMotion ? -.2 : -seconds * .18;
+    orbit.rotation.z = reduceMotion ? .1 : seconds * .06;
+    particles.rotation.y = reduceMotion ? 0 : seconds * .018;
+    camera.position.x += (pointer.x * .22 - camera.position.x) * .03;
+    camera.position.y += (.15 - pointer.y * .12 - camera.position.y) * .03;
+    camera.lookAt(0, 0, 0);
+    renderer.render(scene, camera);
+    if(!reduceMotion) requestAnimationFrame(render);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+  render(0);
+}
 
 /* ---------- Hero word assembly ---------- */
 function initHeroWordAssembly(){
@@ -51,7 +129,7 @@ function initHeroWordAssembly(){
 function initPageExperience(){
   const loader = document.createElement('div');
   loader.className = 'page-loader';
-  loader.innerHTML = '<div class="loader-inner"><div class="loader-logo"><span class="logo-mark"></span>Shri Digital Consultancy<span class="loader-logo-dot">.</span></div><div class="loader-status">Preparing your experience</div><div class="loader-line"><span></span></div></div>';
+  loader.innerHTML = '<div class="loader-inner"><div class="loader-logo">Shri Digital Consultancy</div><div class="loader-status">Preparing your experience</div><div class="loader-line"><span></span></div></div>';
   document.body.appendChild(loader);
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

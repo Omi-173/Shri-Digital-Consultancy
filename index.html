@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 <script src="script.js" defer></script>
 </head>
 <body>
@@ -23,7 +24,7 @@
     <nav class="nav-desktop" aria-label="Primary">
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a><div class="services-menu"><a href="services.html#digital-strategy">Digital Strategy</a><a href="services.html#web-development">Web Development</a><a href="services.html#ecommerce-development">E-commerce Development</a><a href="services.html#ui-ux-design">UI/UX Design</a><a href="services.html#digital-marketing">Digital Marketing</a><a href="services.html#technology-consulting">Technology Consulting</a><a href="services.html#performance-marketing">Performance Marketing</a></div></li>
+        <li><a href="services.html">Services</a><div class="services-menu"><a href="services.html#digital-strategy">Digital Strategy</a><a href="services.html#web-development">Web Development</a><a href="services.html#ecommerce-development">E-commerce Development</a><a href="services.html#ui-ux-design">UI/UX Design</a><a href="services.html#digital-marketing">Digital Marketing</a><a href="services.html#technology-consulting">Technology Consulting</a><a href="services.html#performance-marketing">Performance Marketing</a><a href="services.html#app-design-development">App Design & Development</a><a href="services.html#performance-marketing">Affiliate Marketing</a><a href="services.html#performance-marketing">Influencer Marketing</a><a href="services.html#performance-marketing">PR Marketing</a><a href="services.html#newspaper-banner-ads">Newspaper & Banner Ads</a></div></li>
         <li><a href="about.html">About</a></li>
         <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="blog.html">Blog</a></li>
@@ -50,6 +51,11 @@
   <a class="mobile-service-link" href="services.html#digital-marketing">Digital Marketing</a>
   <a class="mobile-service-link" href="services.html#technology-consulting">Technology Consulting</a>
   <a class="mobile-service-link" href="services.html#performance-marketing">Performance Marketing</a>
+  <a class="mobile-service-link" href="services.html#app-design-development">App Design & Development</a>
+  <a class="mobile-service-link" href="services.html#performance-marketing">Affiliate Marketing</a>
+  <a class="mobile-service-link" href="services.html#performance-marketing">Influencer Marketing</a>
+  <a class="mobile-service-link" href="services.html#performance-marketing">PR Marketing</a>
+  <a class="mobile-service-link" href="services.html#newspaper-banner-ads">Newspaper & Banner Ads</a>
   <a href="about.html"><span>03</span>About</a>
   <a href="portfolio.html"><span>04</span>Portfolio</a>
   <a href="blog.html"><span>05</span>Blog</a>
@@ -72,70 +78,185 @@
   </div>
 </aside>
 
-<!-- ============ HOME VIDEO INTRO ============ -->
-<section class="home-video-hero" aria-label="Digital marketing introduction">
-  <canvas id="marketing-canvas" class="marketing-canvas" aria-hidden="true"></canvas>
-  <div class="video-tint" aria-hidden="true"></div>
-  <div class="container video-content">
-    <h1 aria-label="Digital Marketing"><span class="hero-word">Digital</span><span class="hero-word">Marketing</span></h1>
-  </div>
-  <div class="video-scroll-mark" aria-hidden="true"><span></span></div>
-</section>
-
 <main id="main">
 
   <!-- ============ HERO ============ -->
-  <section class="hero home-secondary-hero">
-    <div class="hero-grid-bg" aria-hidden="true"></div>
-    <div class="container hero-home">
-      <div class="hero-copy">
-        <div class="eyebrow">Digital Consultancy &amp; Technology Partner</div>
-        <h1>We Build Digital<br>Experiences That<br>Drive Growth.</h1>
-        <p class="lede">We help ambitious businesses transform their ideas into powerful digital experiences, scalable technology and measurable growth.</p>
-        <div class="btn-row">
-          <a href="services.html" class="btn btn-primary">Explore Our Services
+  <section class="hero3d" aria-label="Digital consultancy introduction">
+    <canvas id="hero3d-canvas" aria-hidden="true"></canvas>
+    <div class="hero3d-glow" aria-hidden="true"></div>
+    <div class="container hero3d-inner">
+      <div class="hero3d-copy">
+        <h1>Make your<br><em>next move</em><br>matter.</h1>
+        <p class="hero3d-lede">Strategy, design and technology for ambitious businesses ready to turn attention into momentum.</p>
+        <div class="hero3d-actions">
+          <a href="services.html" class="btn btn-accent">Explore our services
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
           </a>
-          <a href="contact.html" class="btn btn-outline">Let's Talk
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
-          </a>
+          <a href="#about-intro" class="hero3d-link">See how we work <span aria-hidden="true">↓</span></a>
         </div>
       </div>
-      <div class="hero-visual">
-        <canvas id="signal-canvas" aria-hidden="true"></canvas>
-        <div class="float-card float-card--a">
-          <div class="num">50+</div>
-          <div class="label">Projects Delivered</div>
-        </div>
-        <div class="float-card float-card--b">
-          <div class="num">98%</div>
-          <div class="label">Client Satisfaction</div>
-        </div>
-      </div>
+      <div class="hero3d-scroll" aria-hidden="true"><span>Scroll to explore</span><i></i></div>
     </div>
   </section>
 
   <!-- ============ TRUST / CLIENTS ============ -->
   <section class="marquee-wrap">
-    <p class="marquee-label">Trusted by businesses ready to grow</p>
+    <p class="marquee-label">Trusted by businesses </p>
     <div class="marquee-track" aria-hidden="true">
-      <span>Northfield&nbsp;&amp;&nbsp;Co.</span>
-      <span>Vantra</span>
-      <span>Studio&nbsp;Marlowe</span>
-      <span>Kestrel&nbsp;Retail</span>
-      <span>Union&nbsp;Systems</span>
-      <span>Larkspur</span>
-      <span>Northfield&nbsp;&amp;&nbsp;Co.</span>
-      <span>Vantra</span>
-      <span>Studio&nbsp;Marlowe</span>
-      <span>Kestrel&nbsp;Retail</span>
-      <span>Union&nbsp;Systems</span>
-      <span>Larkspur</span>
+      <div class="logo-item">
+        <img src="assets/images/amazon_logo.png" alt="Amazon India" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/flipcart_logo.png" alt="Flipkart" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/myntra_logo.png" alt="Myntra" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/ebay_logo.png" alt="eBay" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/saareebari_logo.avif" alt="Saree Bari" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/Aari_logo.png" alt="Aari India" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/minimaana_logo.png" alt="Minimaana" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/LaalZari_logo.avif" alt="Laal Zari" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/singhanias_logo.avif" alt="The Singhanias" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/KF_logo.png" alt="Kalki Fashion" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/aza_logo.png" alt="Aza Fashions" loading="lazy">
+      </div>
+
+      <!-- <div class="logo-item">
+        <img src="assets/images/" alt="House of Hiranandani" loading="lazy">
+      </div> -->
+      <div class="logo-item">
+        <img src="assets/images/adani_logo.png" alt="Adani" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/rustomjee.png" alt="Rustomjee" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/Lodha_logo.png" alt="Lodha Group" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/ajmera_logo.webp" alt="Ajmera" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/gm_logo.png" alt="Golden Muslin" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/webzaa_logo.png" alt="Webzaa" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <span class="logo-text logo-text--submit-edge">Submit Edge SEO</span>
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/9Dzine_Logo.png" alt="9Dzine" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/drpremgupta_logo.png" alt="Dr Prem Gupta" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <span class="logo-text logo-text--hitflik">Hitflik</span>
+      </div>
+      <div class="logo-item">
+        <span class="logo-text logo-text--vedic-math">Free Vedic Math</span>
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/isshaan_logo.png" alt="Isshaan" loading="lazy">
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="logo-item">
+        <img src="assets/images/amazon_logo.png" alt="Amazon India" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/flipcart_logo.png" alt="Flipkart" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/myntra_logo.png" alt="Myntra" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/ebay_logo.png" alt="eBay" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/saareebari_logo.avif" alt="Saree Bari" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/Aari_logo.png" alt="Aari India" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/minimaana_logo.png" alt="Minimaana" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/LaalZari_logo.avif" alt="Laal Zari" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/singhanias_logo.png" alt="The Singhanias" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/kalkifashion_logo.png" alt="Kalki Fashion" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/amazon_logo.png" alt="Aza Fashions" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/Mahotsav_Logo.webp" alt="Mahotsav Group" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/logos/houseofhiranandani.png" alt="House of Hiranandani" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/adani_logo.png" alt="Adani" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/rustomjee.png" alt="Rustomjee" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/Lodha_logo.png" alt="Lodha Group" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/ajmera_logo.webp" alt="Ajmera" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/gm_logo.png" alt="Golden Muslin" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/webzaa_logo.png" alt="Webzaa" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <span class="logo-text logo-text--submit-edge">Submit Edge SEO</span>
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/9Dzine_Logo.png" alt="9Dzine" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/drpremgupta_logo.png" alt="Dr Prem Gupta" loading="lazy">
+      </div>
+      <div class="logo-item">
+        <span class="logo-text logo-text--hitflik">Hitflik</span>
+      </div>
+      <div class="logo-item">
+        <span class="logo-text logo-text--vedic-math">Free Vedic Math</span>
+      </div>
+      <div class="logo-item">
+        <img src="assets/images/isshaan_logo.png" alt="Isshaan" loading="lazy">
+      </div>
     </div>
   </section>
 
   <!-- ============ ABOUT INTRO ============ -->
-  <section class="section">
+  <section class="section" id="about-intro">
     <div class="container intro-split">
       <div class="intro-media reveal reveal-from-left">
         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80" alt="Shri Digital Consultancy team collaborating around a laptop during a strategy session" loading="lazy">
@@ -161,7 +282,7 @@
           <div class="eyebrow">What We Do</div>
           <h2>Capability across the<br>entire digital lifecycle.</h2>
         </div>
-        <p class="lede">Seven connected disciplines that take a business from idea to measurable market impact  without handoffs between disconnected vendors.</p>
+        <p class="lede">Twelve connected disciplines that take a business from idea to measurable market impact  without handoffs between disconnected vendors.</p>
       </div>
 
       <div class="bento reveal-stagger">
@@ -232,8 +353,143 @@
           </div>
           <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M3 11l18-7-7 18-2-8-9-3z"/><path d="M14 7l3 3"/></svg></div>
           <h3 class="service-title">Performance Marketing</h3>
-          <p>Google, Meta, Facebook, Instagram and Bing advertising focused on measurable returns.</p>
+          <p>Google Ads, Meta Ads (Facebook, Instagram & WhatsApp), Bing Ads, Criteo and Affiliate Marketing.</p>
         </a>
+
+        <a href="services.html#app-design-development" class="service-card">
+          <div class="service-top">
+            <span class="service-index">08</span>
+            <span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg></div>
+          <h3 class="service-title">App Design & Development</h3>
+          <p>Mobile and web applications built with seamless user experience across all devices.</p>
+        </a>
+
+        <a href="services.html#performance-marketing" class="service-card">
+          <div class="service-top">
+            <span class="service-index">09</span>
+            <span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <h3 class="service-title">Influencer Marketing</h3>
+          <p>Strategic partnerships with influencers to amplify your brand reach and engagement.</p>
+        </a>
+
+        <a href="services.html#performance-marketing" class="service-card">
+          <div class="service-top">
+            <span class="service-index">10</span>
+            <span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/><line x1="9" y1="10" x2="15" y2="10"/><line x1="9" y1="14" x2="15" y2="14"/></svg></div>
+          <h3 class="service-title">PR Marketing</h3>
+          <p>Public relations and media outreach to build brand credibility and awareness.</p>
+        </a>
+
+        <a href="services.html#newspaper-banner-ads" class="service-card">
+          <div class="service-top">
+            <span class="service-index">11</span>
+            <span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18"/><path d="M7 6v12M17 6v12"/></svg></div>
+          <h3 class="service-title">Newspaper & Banner Ads</h3>
+          <p>Strategic print and digital advertising campaigns through traditional and emerging media.</p>
+        </a>
+
+        <a href="services.html#performance-marketing" class="service-card">
+          <div class="service-top">
+            <span class="service-index">12</span>
+            <span class="arrow-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
+          </div>
+          <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.8"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+          <h3 class="service-title">Affiliate Marketing</h3>
+          <p>Performance-based marketing partnerships to drive measurable sales and conversions.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CHANNEL PARTNERS ============ -->
+  <section class="section partners-section" style="background:var(--bg-soft);">
+    <div class="container">
+      <div class="partners-header reveal">
+        <div class="partners-header-top">
+          <span class="partners-label">OUR CHANNEL PARTNER</span>
+        </div>
+        <h2 class="partners-title">Our Channel Partners</h2>
+        <p class="partners-subtitle">Powering Growth Through Leading Digital Platforms</p>
+        <p class="partners-description">We work with leading digital, advertising, search, social, media, and technology platforms to help businesses reach the right audience and scale their digital presence.</p>
+      </div>
+
+      <div class="partners-grid reveal-stagger">
+        <div class="partner-card">
+          <div class="partner-name" style="color: #4285F4;">Google</div>
+          <p class="partner-url">Google.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #10284f;">Meta</div>
+          <p class="partner-url">Meta.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #00A4EF;">Bing</div>
+          <p class="partner-url">Bing.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #FF5722;">CRITEO</div>
+          <p class="partner-url">Criteo.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #003366;">Taboola</div>
+          <p class="partner-url">taboola.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #25D366;">WhatsApp</div>
+          <p class="partner-url">WhatsApp.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #10284f;">THE TIMES OF INDIA</div>
+          <p class="partner-url">Times Of India</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #FF0000;">YouTube</div>
+          <p class="partner-url">YouTube.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #E60023;">Pinterest</div>
+          <p class="partner-url">Pinterest.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #0A66C2;">LinkedIn</div>
+          <p class="partner-url">LinkedIn.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #003DA5;">Justdial</div>
+          <p class="partner-url">Justdial.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #EE3124;">INDIAMART</div>
+          <p class="partner-url">Indiamart.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #3DDC84;">Google Play</div>
+          <p class="partner-url">play.google.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #007AFF;">App Store</div>
+          <p class="partner-url">apps.apple.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #10284f;">Apple</div>
+          <p class="partner-url">www.apple.com</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #FF7A00;">Semrush</div>
+          <p class="partner-url">Semrush</p>
+        </div>
+        <div class="partner-card">
+          <div class="partner-name" style="color: #0055B8;">ahrefs</div>
+          <p class="partner-url">Ahrefs</p>
+        </div>
       </div>
     </div>
   </section>
@@ -252,7 +508,7 @@
             <p class="stat-label">Happy Clients</p>
           </div>
           <div class="stat-item">
-            <div class="stat-number"><span data-counter="10" data-suffix="+">0</span></div>
+            <div class="stat-number"><span data-counter="5" data-suffix="+">0</span></div>
             <p class="stat-label">Years Experience</p>
           </div>
           <div class="stat-item">
@@ -290,10 +546,10 @@
           </div>
         </article>
         <article class="project-card">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Mane Financial corporate website shown on desktop monitor" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt=" corporate website shown on desktop monitor" loading="lazy">
           <div class="project-overlay">
             <span class="project-cat">Corporate Website</span>
-            <h3>Mane Financial</h3>
+            <h3></h3>
             <p>A trust-driven digital presence for a financial advisory firm.</p>
             <a href="portfolio.html" class="project-view">View Project
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
@@ -301,10 +557,10 @@
           </div>
         </article>
         <article class="project-card">
-          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" alt="Finapinc financial platform dashboard interface" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80" alt=" financial platform dashboard interface" loading="lazy">
           <div class="project-overlay">
             <span class="project-cat">Technology Platform</span>
-            <h3>Finapinc</h3>
+            <h3></h3>
             <p>A custom platform built to streamline client onboarding.</p>
             <a href="portfolio.html" class="project-view">View Project
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg>
