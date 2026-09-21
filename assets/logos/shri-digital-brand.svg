@@ -1,0 +1,33 @@
+<svg width="820" height="700" viewBox="0 0 820 700" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ring" x1="140" y1="80" x2="690" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E6FCE"/>
+      <stop offset="1" stop-color="#0B4EAB"/>
+    </linearGradient>
+  </defs>
+
+  <circle cx="410" cy="250" r="238" fill="url(#ring)"/>
+
+  <g>
+    <rect x="272" y="225" width="72" height="138" rx="8" fill="#7CC5F6" opacity="0.88"/>
+    <rect x="366" y="180" width="72" height="183" rx="8" fill="#EAF7FF"/>
+    <rect x="460" y="145" width="72" height="218" rx="8" fill="#F2F8FF"/>
+    <rect x="554" y="190" width="78" height="173" rx="8" fill="#DCEEFF" opacity="0.94"/>
+  </g>
+
+  <path d="M278 365L342 318L398 282L469 240L559 160L668 78" stroke="#FFFFFF" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M640 80L668 78L644 116L640 80Z" fill="#FFFFFF"/>
+  <path d="M278 365L342 318L398 282L469 240L559 160L668 78" stroke="#0B4EAB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.24"/>
+
+  <g fill="#0B4EAB">
+    <path d="M305 374L331 374L319 398L293 398L305 374Z"/>
+    <path d="M340 346L366 346L354 370L328 370L340 346Z"/>
+    <path d="M375 315L401 315L389 339L363 339L375 315Z"/>
+    <path d="M410 282L436 282L424 306L398 306L410 282Z"/>
+    <path d="M446 248L472 248L460 272L434 272L446 248Z"/>
+    <path d="M483 219L509 219L497 243L471 243L483 219Z"/>
+  </g>
+
+  <text x="410" y="560" text-anchor="middle" font-size="68" font-weight="800" letter-spacing="-1.6" font-family="Montserrat, Arial, sans-serif" fill="#0B4EAB">SHRI DIGITAL</text>
+  <text x="410" y="640" text-anchor="middle" font-size="62" font-weight="800" letter-spacing="-1.2" font-family="Montserrat, Arial, sans-serif" fill="#0B4EAB">CONSULTANCY</text>
+</svg>

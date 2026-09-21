@@ -1,41 +1,130 @@
 const BLOG_POSTS_KEY = 'shri-digital-blog-posts';
 
 const defaultBlogPosts = [
+
   {
-    slug: 'digital-strategy-for-growing-businesses',
-    title: 'Why Digital Strategy Matters for Growing Businesses',
-    category: 'Strategy',
-    date: '2026-08-22',
-    excerpt: 'A practical guide to connecting business goals, customer insight and digital execution before investing in tools or campaigns.',
-    body: 'Growth becomes easier to measure when your digital activity is tied to a clear business outcome. Start with the customer problem, define the commercial goal, and then choose the channels and technology that support it.\n\nA strong strategy creates focus across content, search, design and development. It also gives your team a simple way to decide what to build now, what to test next and what to leave behind.\n\nAt Shri Digital Consultancy, we turn that clarity into an actionable roadmap with priorities, owners and measurable milestones.'
+    slug: 'how-digital-marketing-helps-businesses-grow-2026',
+
+    title: 'How Digital Marketing Helps Businesses Grow in 2026',
+
+    category: 'Digital Marketing',
+
+    date: '2026-09-21',
+
+    image: 'assets/images/Blog1.png',
+
+    excerpt: 'In today’s competitive business environment, having a strong online presence is no longer optional. Customers increasingly discover brands through search engines, social media, online advertisements, and digital platforms before making a purchase decision.',
+
+    body: '',
+
+    url: 'Blogs/how-digital-marketing-helps-businesses-grow-2026.html'
   },
+
   {
-    slug: 'seo-foundations-that-compound',
-    title: 'SEO Foundations That Compound Over Time',
+    slug: 'why-your-business-needs-a-professional-website-in-2026',
+
+    title: 'Why Your Business Needs a Professional Website in 2026',
+
+    category: 'Web Development',
+
+    date: '2026-09-21',
+
+    image: 'assets/images/Blog2.png',
+
+    excerpt: 'Your website is more than an online brochure. In 2026, it can work as a digital storefront, lead-generation platform, sales channel, customer-support resource, and important part of your brand identity.',
+
+    body: '',
+
+    url: 'Blogs/why-your-business-needs-a-professional-website-in-2026.html'
+  },
+
+  {
+    slug: 'seo-vs-aeo-vs-geo-future-of-search-optimization',
+
+    title: 'SEO vs AEO vs GEO: The Future of Search Optimization',
+
     category: 'SEO',
-    date: '2026-08-15',
-    excerpt: 'The essential technical, content and measurement habits that help a website earn qualified attention consistently.',
-    body: 'Sustainable SEO is built from useful pages, clear site structure and a fast experience. Begin by mapping the questions your best customers ask, then create focused pages that answer those questions better than generic competitor content.\n\nTechnical hygiene matters too: descriptive titles, crawlable links, sensible headings, structured data and strong mobile performance make it easier for search engines and people to understand your site.\n\nReview performance monthly, learn from the pages already earning traction, and improve them before chasing every new keyword.'
+
+    date: '2026-09-21',
+
+    image: 'assets/images/Blog3.png',
+
+    excerpt: 'Search is changing rapidly. People are no longer using search engines only to find a list of websites. They are increasingly asking complete questions and expecting direct, useful answers.',
+
+    body: '',
+
+    url: 'Blogs/seo-vs-aeo-vs-geo-future-of-search-optimization.html'
   },
+
   {
-    slug: 'website-conversion-checklist',
-    title: 'A Website Conversion Checklist for Better Enquiries',
-    category: 'Web',
-    date: '2026-08-08',
-    excerpt: 'Small improvements in clarity, trust and friction can turn more of your existing traffic into meaningful conversations.',
-    body: 'A converting website answers three questions quickly: what do you do, who is it for, and what should I do next? Make the primary action visible, use specific proof, and remove unnecessary fields from enquiry forms.\n\nYour pages should also load quickly and work comfortably on a phone. Test the complete journey from first visit to form confirmation, including the message a visitor sees after submitting their details.\n\nConversion optimisation is an ongoing practice, not a redesign event. Track completed enquiries and use real user questions to refine the experience.'
+    slug: 'how-to-build-a-successful-ecommerce-website-for-your-business',
+
+    title: 'How to Build a Successful E-commerce Website for Your Business',
+
+    category: 'E-commerce',
+
+    date: '2026-09-21',
+
+    image: 'assets/images/Blog4.png',
+
+    excerpt: 'Online shopping has become an important part of modern consumer behaviour. Customers expect convenient product discovery, simple navigation, secure payments, fast websites, and transparent delivery information.',
+
+    body: '',
+
+    url: 'Blogs/how-to-build-a-successful-ecommerce-website-for-your-business.html'
+  },
+
+  {
+    slug: 'how-performance-marketing-can-generate-better-leads-and-sales',
+
+    title: 'How Performance Marketing Can Generate Better Leads and Sales',
+
+    category: 'Performance Marketing',
+
+    date: '2026-09-21',
+
+    image: 'assets/images/Blog5.png',
+
+    excerpt: 'Businesses today want more than visibility. They want measurable results such as qualified leads, enquiries, sales, registrations, and revenue.',
+
+    body: '',
+
+    url: 'Blogs/how-performance-marketing-can-generate-better-leads-and-sales.html'
   }
+
 ];
 
-function getBlogPosts(){
+function getBlogPosts() {
+
   try {
-    const saved = JSON.parse(localStorage.getItem(BLOG_POSTS_KEY));
-    return Array.isArray(saved) && saved.length ? saved : defaultBlogPosts;
-  } catch(error) {
-    return defaultBlogPosts;
+
+    const saved = localStorage.getItem(BLOG_POSTS_KEY);
+
+    if (saved) {
+
+      const posts = JSON.parse(saved);
+
+      if (Array.isArray(posts) && posts.length) {
+        return posts;
+      }
+
+    }
+
+  } catch (error) {
+
+    console.error('Unable to load blog posts:', error);
+
   }
+
+  return defaultBlogPosts;
+
 }
 
-function saveBlogPosts(posts){
-  localStorage.setItem(BLOG_POSTS_KEY, JSON.stringify(posts));
+function saveBlogPosts(posts) {
+
+  localStorage.setItem(
+    BLOG_POSTS_KEY,
+    JSON.stringify(posts)
+  );
+
 }
