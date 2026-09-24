@@ -28,7 +28,7 @@ if (strlen($name) < 2 || !filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($p
     exit;
 }
 
-$recipient = 'digitalconsulting1390@gmail.com';
+$recipient = 'nilesh@shridigitalconsultancy.com';
 $subject = 'New Shri Digital Consultancy enquiry';
 $body = "Name: {$name}\nEmail: {$email}\nPhone: {$phone}\nCompany: {$company}\nService: {$service}\nBudget: {$budget}\n\nMessage:\n{$message}\n";
 $headers = "From: Shri Digital Consultancy <no-reply@" . ($_SERVER['SERVER_NAME'] ?? 'localhost') . ">\r\n";

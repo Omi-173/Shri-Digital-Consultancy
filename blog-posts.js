@@ -1,3 +1,4 @@
+
 const BLOG_POSTS_KEY = 'shri-digital-blog-posts';
 
 const defaultBlogPosts = [
@@ -20,6 +21,7 @@ const defaultBlogPosts = [
     url: 'Blogs/how-digital-marketing-helps-businesses-grow-2026.html'
   },
 
+
   {
     slug: 'why-your-business-needs-a-professional-website-in-2026',
 
@@ -37,6 +39,7 @@ const defaultBlogPosts = [
 
     url: 'Blogs/why-your-business-needs-a-professional-website-in-2026.html'
   },
+
 
   {
     slug: 'seo-vs-aeo-vs-geo-future-of-search-optimization',
@@ -56,6 +59,7 @@ const defaultBlogPosts = [
     url: 'Blogs/seo-vs-aeo-vs-geo-future-of-search-optimization.html'
   },
 
+
   {
     slug: 'how-to-build-a-successful-ecommerce-website-for-your-business',
 
@@ -74,6 +78,7 @@ const defaultBlogPosts = [
     url: 'Blogs/how-to-build-a-successful-ecommerce-website-for-your-business.html'
   },
 
+
   {
     slug: 'how-performance-marketing-can-generate-better-leads-and-sales',
 
@@ -90,9 +95,33 @@ const defaultBlogPosts = [
     body: '',
 
     url: 'Blogs/how-performance-marketing-can-generate-better-leads-and-sales.html'
+  },
+
+
+  {
+    slug: 'ai-search-geo-in-2026-how-businesses-can-get-found-on-google-chatgpt-ai-search',
+
+    title: 'AI Search & GEO in 2026: How Businesses Can Get Found on Google, ChatGPT & AI Search',
+
+    category: 'SEO',
+
+    date: '2026-09-24',
+
+    image: 'assets/images/Blog6.png',
+
+    excerpt: 'The way people search for businesses, products and services is changing rapidly. In 2026, customers are increasingly using AI-powered search experiences and platforms such as ChatGPT, Gemini and other conversational tools to research brands, compare services and find answers.',
+
+    body: '',
+
+    url: 'Blogs/ai-search-geo-in-2026-how-businesses-can-get-found-on-google-chatgpt-ai-search.html'
   }
 
 ];
+
+
+/* =========================================
+   GET BLOG POSTS
+========================================= */
 
 function getBlogPosts() {
 
@@ -104,15 +133,20 @@ function getBlogPosts() {
 
       const posts = JSON.parse(saved);
 
-      if (Array.isArray(posts) && posts.length) {
+      if (Array.isArray(posts) && posts.length > 0) {
+
         return posts;
+
       }
 
     }
 
   } catch (error) {
 
-    console.error('Unable to load blog posts:', error);
+    console.error(
+      'Unable to load blog posts:',
+      error
+    );
 
   }
 
@@ -120,11 +154,27 @@ function getBlogPosts() {
 
 }
 
+
+/* =========================================
+   SAVE BLOG POSTS
+========================================= */
+
 function saveBlogPosts(posts) {
 
-  localStorage.setItem(
-    BLOG_POSTS_KEY,
-    JSON.stringify(posts)
-  );
+  try {
+
+    localStorage.setItem(
+      BLOG_POSTS_KEY,
+      JSON.stringify(posts)
+    );
+
+  } catch (error) {
+
+    console.error(
+      'Unable to save blog posts:',
+      error
+    );
+
+  }
 
 }

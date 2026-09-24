@@ -4,142 +4,677 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>How to Build a Successful E-commerce Website for Your Business</title>
+    <title>How to Build a Successful E-commerce Website for Your Business | Shri Digital Consultancy</title>
+
+    <meta
+        name="description"
+        content="Learn how to build a successful eCommerce website with better navigation, product pages, mobile optimization, secure payments, SEO and digital marketing."
+    >
+
+    <meta
+        property="og:title"
+        content="How to Build a Successful E-commerce Website for Your Business | Shri Digital Consultancy"
+    >
+
+    <meta
+        property="og:description"
+        content="Learn how to build a successful eCommerce website with better navigation, product pages, mobile optimization, secure payments, SEO and digital marketing."
+    >
+
+    <meta property="og:type" content="article">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&family=Lora:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="../assets/logos/shri-digital-favicon.svg"
+    >
 
     <link rel="stylesheet" href="../style.css">
 
-    <style>
-        /* ================= BLOG ARTICLE ================= */
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
 
-        .blog-page {
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 60px 20px 80px;
+    <script src="../script.js" defer></script>
+
+    <style>
+        /* =========================================================
+           BLOG ARTICLE PAGE
+        ========================================================= */
+
+        .blog-article-page {
+            margin: 0;
+            background: #fffdf9;
+            color: #142f57;
+            min-height: 100vh;
         }
 
-        .blog-page .blog-image {
+        .blog-article-page * {
+            box-sizing: border-box;
+        }
+
+        /* ================= HEADER ================= */
+
+        .blog-article-header {
             width: 100%;
-            max-width: 850px;
+            background: #fffdf9;
+            border-bottom: 1px solid rgba(20, 47, 87, 0.12);
+        }
+
+        .blog-article-header-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 18px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .blog-article-logo {
+            color: #142f57;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .blog-article-nav {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .blog-article-nav a {
+            color: #142f57;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .blog-article-nav a:hover {
+            color: #4ba9ee;
+        }
+
+        .blog-article-nav .blog-nav-cta {
+            background: #142f57;
+            color: #fff;
+            padding: 10px 17px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .blog-article-nav .blog-nav-cta:hover {
+            color: #fff;
+            background: #1b56a2;
+        }
+
+        /* ================= BLOG HERO ================= */
+
+        .blog-article-hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 55px 25px 30px;
+            text-align: center;
+        }
+
+        .blog-article-meta {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 18px;
+        }
+
+        .blog-article-category {
+            color: #f15b45;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .blog-article-date {
+            color: #667085;
+            font-size: 11px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .blog-article-title {
+            margin: 0;
+            color: #142f57;
+            font-size: 42px;
+            line-height: 1.12;
+            letter-spacing: -1px;
+            font-weight: 700;
+        }
+
+        /* ================= FEATURE IMAGE ================= */
+
+        .blog-feature-image-wrap {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 25px 45px;
+        }
+
+        .blog-feature-image {
+            width: 100%;
             height: auto;
+            max-height: 500px;
             display: block;
             object-fit: contain;
-            margin: 0 auto 40px;
-            border-radius: 12px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(20, 47, 87, 0.08);
         }
 
-        .blog-page h1 {
-            font-size: 42px;
-            line-height: 1.15;
-            margin: 0 0 30px;
+        /* ================= ARTICLE CONTENT ================= */
+
+        .blog-article-content {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 25px 60px;
         }
 
-        .blog-page h2 {
+        .blog-article-content p {
+            margin: 0 0 18px;
+            color: #344054;
+            font-size: 16px;
+            line-height: 1.75;
+            font-weight: 400;
+        }
+
+        .blog-article-content h2 {
+            margin: 42px 0 15px;
+            color: #142f57;
             font-size: 28px;
             line-height: 1.25;
-            margin: 42px 0 16px;
+            letter-spacing: -0.4px;
+            font-weight: 700;
         }
 
-        .blog-page h3 {
-            font-size: 21px;
-            line-height: 1.35;
-            margin: 30px 0 10px;
+        .blog-article-content h3 {
+            margin: 27px 0 9px;
+            color: #142f57;
+            font-size: 19px;
+            line-height: 1.4;
+            font-weight: 700;
         }
 
-        .blog-page p {
-            font-size: 17px;
-            line-height: 1.8;
-            margin: 0 0 22px;
+        .blog-article-content strong {
+            color: #142f57;
+            font-weight: 700;
         }
 
-        .blog-page ul {
-            margin: 0 0 25px;
-            padding-left: 25px;
-        }
-
-        .blog-page li {
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 6px;
-        }
-
-        .blog-page a {
-            color: inherit;
+        .blog-article-content a {
+            color: #142f57;
+            font-weight: 700;
             text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
         }
 
-        /* ================= MOBILE ================= */
+        .blog-article-content a:hover {
+            color: #4ba9ee;
+        }
 
-        @media (max-width: 768px) {
+        .blog-article-content ul {
+            margin: 8px 0 20px;
+            padding-left: 23px;
+        }
 
-            .blog-page {
-                padding: 40px 18px 60px;
+        .blog-article-content li {
+            margin-bottom: 7px;
+            color: #344054;
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        /* ================= BACK BUTTON ================= */
+
+        .blog-back-wrap {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 0 25px 55px;
+        }
+
+        .blog-back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 17px;
+            border: 1px solid rgba(20, 47, 87, 0.2);
+            border-radius: 4px;
+            color: #142f57;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .blog-back-link:hover {
+            background: #142f57;
+            color: #fff;
+        }
+
+        /* ================= FOOTER ================= */
+
+        .site-footer {
+            background: #142f57;
+            color: #fff;
+            width: 100%;
+            padding: 65px 0 0;
+        }
+
+        .site-footer .footer-container {
+            width: 100%;
+            max-width: 1360px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 1.7fr 1fr 1.25fr 1.3fr;
+            gap: 55px;
+            padding-bottom: 50px;
+        }
+
+        .footer-brand {
+            padding-right: 15px;
+        }
+
+        .footer-brand-logo {
+            display: block;
+            width: 270px;
+            max-width: 100%;
+            margin: 0 0 25px;
+        }
+
+        .footer-brand-description {
+            max-width: 390px;
+            margin: 0 0 30px;
+            color: #aebbd0;
+            font-size: 16px;
+            line-height: 1.65;
+            font-weight: 500;
+        }
+
+        .footer-social {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            width: 48px;
+            height: 48px;
+            border: 1px solid rgba(255,255,255,.22);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: .2s ease;
+        }
+
+        .footer-social a:hover {
+            background: #1b56a2;
+            border-color: #1b56a2;
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .footer-col h4 {
+            margin: 0 0 30px;
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.8px;
+            line-height: 1.2;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-col li {
+            margin: 0 0 20px;
+        }
+
+        .footer-col li:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-col a {
+            color: #aebbd0;
+            font-size: 16px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color .2s ease;
+        }
+
+        .footer-col a:hover {
+            color: #fff;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 17px;
+            margin: 0 0 25px;
+        }
+
+        .footer-contact-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer-contact-icon {
+            flex: 0 0 52px;
+            width: 52px;
+            height: 52px;
+            background: #1b56a2;
+            border: 1px solid rgba(255,255,255,.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-contact-icon svg {
+            width: 21px;
+            height: 21px;
+            color: #fff;
+        }
+
+        .footer-contact-label {
+            display: block;
+            color: #aebbd0;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 6px;
+        }
+
+        .footer-contact-value {
+            color: #fff;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 1.5;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            min-height: 85px;
+            border-top: 1px solid rgba(255,255,255,.18);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .footer-copyright {
+            margin: 0;
+            color: #b8c4d6;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .footer-legal {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .footer-legal a {
+            color: #b8c4d6;
+            font-size: 14px;
+            text-decoration: none;
+        }
+
+        .footer-legal a:hover {
+            color: #fff;
+        }
+
+        .footer-legal span {
+            color: #607897;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 1000px) {
+            .footer-top {
+                grid-template-columns: 1.5fr 1fr 1fr;
             }
 
-            .blog-page .blog-image {
-                margin-bottom: 30px;
-                border-radius: 8px;
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .blog-article-nav {
+                gap: 15px;
             }
 
-            .blog-page h1 {
-                font-size: 32px;
-                line-height: 1.2;
-                margin-bottom: 24px;
+            .blog-article-nav a:not(.blog-nav-cta) {
+                display: none;
             }
 
-            .blog-page h2 {
-                font-size: 24px;
-                margin-top: 34px;
+            .blog-article-hero {
+                padding: 45px 20px 25px;
             }
 
-            .blog-page h3 {
-                font-size: 19px;
+            .blog-feature-image-wrap {
+                padding: 0 20px 35px;
             }
 
-            .blog-page p,
-            .blog-page li {
+            .blog-article-content {
+                padding: 0 20px 50px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+                gap: 45px 35px;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .blog-article-header-inner {
+                padding: 15px 16px;
+            }
+
+            .blog-article-logo {
                 font-size: 16px;
+            }
+
+            .blog-article-nav .blog-nav-cta {
+                padding: 8px 13px;
+                font-size: 12px;
+            }
+
+            .blog-article-hero {
+                padding: 38px 16px 22px;
+            }
+
+            .blog-article-meta {
+                flex-direction: column;
+                gap: 6px;
+                margin-bottom: 15px;
+            }
+
+            .blog-article-title {
+                font-size: 31px;
+                line-height: 1.15;
+                letter-spacing: -0.6px;
+            }
+
+            .blog-feature-image-wrap {
+                padding: 0 16px 30px;
+            }
+
+            .blog-feature-image {
+                border-radius: 6px;
+            }
+
+            .blog-article-content {
+                padding: 0 16px 45px;
+            }
+
+            .blog-article-content p {
+                font-size: 15px;
                 line-height: 1.7;
+                margin-bottom: 17px;
+            }
+
+            .blog-article-content h2 {
+                margin-top: 36px;
+                margin-bottom: 13px;
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            .blog-article-content h3 {
+                margin-top: 24px;
+                font-size: 18px;
+                line-height: 1.4;
+            }
+
+            .blog-article-content li {
+                font-size: 15px;
+                line-height: 1.65;
+            }
+
+            .blog-back-wrap {
+                padding: 0 16px 40px;
+            }
+
+            .site-footer {
+                padding-top: 50px;
+            }
+
+            .site-footer .footer-container {
+                padding: 0 20px;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+                gap: 38px;
+                padding-bottom: 40px;
+            }
+
+            .footer-brand {
+                grid-column: auto;
+            }
+
+            .footer-brand-logo {
+                width: 240px;
+            }
+
+            .footer-bottom {
+                min-height: auto;
+                padding: 24px 0;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .footer-legal {
+                flex-wrap: wrap;
+                gap: 10px;
             }
         }
 
-        @media (max-width: 480px) {
-
-            .blog-page {
-                padding: 30px 15px 50px;
-            }
-
-            .blog-page h1 {
+        @media (max-width: 420px) {
+            .blog-article-title {
                 font-size: 28px;
             }
 
-            .blog-page h2 {
-                font-size: 22px;
+            .footer-contact-item {
+                gap: 12px;
             }
 
-            .blog-page h3 {
-                font-size: 18px;
+            .footer-contact-icon {
+                flex-basis: 46px;
+                width: 46px;
+                height: 46px;
             }
 
-            .blog-page p,
-            .blog-page li {
-                font-size: 15px;
-                line-height: 1.65;
+            .footer-contact-value {
+                font-size: 14px;
+                overflow-wrap: anywhere;
             }
         }
     </style>
 </head>
 
-<body>
+<body class="blog-article-page">
 
-    <main class="blog-page">
+    <!-- ================= HEADER ================= -->
 
+    <header class="blog-article-header">
+        <div class="blog-article-header-inner">
+
+            <a href="../index.html" class="blog-article-logo">
+                Shri Digital Consultancy
+            </a>
+
+            <nav class="blog-article-nav" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="../services.html">Services</a>
+                <a href="../about.html">About</a>
+                <a href="../portfolio.html">Portfolio</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../contact.html" class="blog-nav-cta">Let’s Talk</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- ================= BLOG HERO ================= -->
+
+    <section class="blog-article-hero">
+
+        <div class="blog-article-meta">
+            <span class="blog-article-category">E-commerce</span>
+            <span class="blog-article-date">15 Sep 2026</span>
+        </div>
+
+        <h1 class="blog-article-title">
+            How to Build a Successful E-commerce Website for Your Business
+        </h1>
+
+    </section>
+
+    <!-- ================= FEATURE IMAGE ================= -->
+
+    <div class="blog-feature-image-wrap">
         <img
             src="../assets/images/Blog4.png"
             alt="How to Build a Successful E-commerce Website for Your Business"
-            class="blog-image"
+            class="blog-feature-image"
         >
+    </div>
 
-        <h1>How to Build a Successful E-commerce Website for Your Business</h1>
+    <!-- ================= ARTICLE CONTENT ================= -->
+
+    <main class="blog-article-content">
 
         <p>
             Online shopping has become an important part of modern consumer behaviour. Customers
@@ -349,8 +884,174 @@
             integrated digital approach can help businesses establish a stronger online
             presence and create a better shopping experience.
         </p>
-
     </main>
+
+    <!-- ================= BACK TO BLOG ================= -->
+
+    <div class="blog-back-wrap">
+        <a href="../blog.html" class="blog-back-link">
+            <span aria-hidden="true">←</span>
+            Back to Blog
+        </a>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <div class="footer-top">
+
+                <!-- BRAND -->
+                <div class="footer-brand">
+
+                    <a href="../index.html" aria-label="Shri Digital Consultancy home">
+                        <img
+                            src="../assets/images/shri_logo.png"
+                            alt="Shri Digital Consultancy"
+                            class="footer-brand-logo"
+                        >
+                    </a>
+
+                    <p class="footer-brand-description">
+                        A digital consultancy helping ambitious businesses turn ideas into scalable
+                        technology and measurable growth.
+                    </p>
+
+                    <div class="footer-social">
+
+                        <a href="https://www.instagram.com/shridigitalconsultancy"
+                           aria-label="Instagram"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                                <circle cx="12" cy="12" r="4"/>
+                                <circle cx="17.5" cy="6.5" r="1"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.linkedin.com/company/shridigitalconsultancy"
+                           aria-label="LinkedIn"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <path d="M7 10v7M7 7v.01M11 17v-4a2 2 0 014 0v4M11 13v4"/>
+                            </svg>
+                        </a>
+
+                        <a href="https://www.facebook.com/shridigitalconsultant"
+                           aria-label="Facebook"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M14 9h3V6h-3a3 3 0 00-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9a1 1 0 011-1z"/>
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- NAVIGATION -->
+                <div class="footer-col">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="../services.html">Services</a></li>
+                        <li><a href="../about.html">About</a></li>
+                        <li><a href="../portfolio.html">Portfolio</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- SERVICES -->
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services.html">Web Development</a></li>
+                        <li><a href="../services.html">Digital Strategy</a></li>
+                        <li><a href="../services.html">E-commerce</a></li>
+                        <li><a href="../services.html">UI/UX Design</a></li>
+                        <li><a href="../services.html">Digital Marketing</a></li>
+                        <li><a href="../services.html">Technology Consulting</a></li>
+                        <li><a href="../services.html#performance-marketing">Performance Marketing</a></li>
+                    </ul>
+                </div>
+
+                <!-- CONTACT -->
+                <div class="footer-col">
+                    <h4>Contact</h4>
+
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="M4 7l8 6 8-6"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <span class="footer-contact-label">Email</span>
+                            <a href="mailto:nilesh@shridigitalconsultancy.com" class="footer-contact-value">
+                                nilesh@shridigitalconsultancy.com
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M6 3h2l1 5-2 2a15 15 0 009 9l2-2 5 1v2a2 2 0 01-2 2A18 18 0 014 5a2 2 0 012-2z"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <span class="footer-contact-label">Phone</span>
+                            <a href="tel:+919967943460" class="footer-contact-value">
+                                +91 9967943460
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-contact-item">
+                        <span class="footer-contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 21s6-5.2 6-11a6 6 0 10-12 0c0 5.8 6 11 6 11z"/>
+                                <circle cx="12" cy="10" r="2.5"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <span class="footer-contact-label">Location</span>
+                            <span class="footer-contact-value">
+                                Mumbai, Maharashtra, India.
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FOOTER BOTTOM -->
+            <div class="footer-bottom">
+
+                <p class="footer-copyright">
+                    © 2026 Shri Digital Consultancy. All rights reserved.
+                </p>
+
+                <div class="footer-legal">
+                    <a href="../index.html">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="../index.html">Terms &amp; Conditions</a>
+                    <span>|</span>
+                    <a href="../contact.html">Sitemap</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
 
 </body>
 </html>

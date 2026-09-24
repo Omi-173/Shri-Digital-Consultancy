@@ -26,7 +26,7 @@ companies = {
     "singhanias": "https://www.singhanias.in/",
     "mahotsavgroup": "https://www.mahotsavgroup.com/",
     "goldenmuslin": "https://goldenmuslin.com/",
-    "kalkifashion": "https://kalkifashion.com/",
+    "Kalki Fashionfashion": "https://Kalki Fashionfashion.com/",
     "azafashions": "https://www.azafashions.com/",
     "webzaa": "https://webzaa.in/",
     "submitedgeseo": "https://submitedgeseo.com/",
